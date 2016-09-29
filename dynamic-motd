@@ -44,16 +44,14 @@ echo -e "
  $COLOR_COLUMN- Hostname$RESET_COLORS............: $COLOR_VALUE $HOSTNAME $RESET_COLORS
  $COLOR_COLUMN- IP Address$RESET_COLORS..........: $COLOR_VALUE $IP $RESET_COLORS
  $COLOR_COLUMN- Release$RESET_COLORS.............: $COLOR_VALUE `cat /etc/redhat-release` $RESET_COLORS
- $COLOR_COLUMN- Users$RESET_COLORS...............: $COLOR_VALUE Currently `users | wc -w` User(s) Logged on $RESET_COLOR
-S
+ $COLOR_COLUMN- Users$RESET_COLORS...............: $COLOR_VALUE Currently `users | wc -w` User(s) Logged on $RESET_COLORS
 =========================================================================== $RESET_COLORS
  $COLOR_COLUMN- Current User$RESET_COLORS........: $COLOR_VALUE $USER $RESET_COLORS
  $COLOR_COLUMN- CPU Usage$RESET_COLORS...........: $COLOR_VALUE $LOAD1 - $LOAD5 - $LOAD15 (1-5-15) $RESET_COLORS
  $COLOR_COLUMN- Memory used$RESET_COLORS.........: $COLOR_VALUE $MEMORY (Total-Free-Used) $RESET_COLORS
  $COLOR_COLUMN- Swap in Use$RESET_COLORS.........: $COLOR_VALUE $SWAP (Total-Used-Free) MB $RESET_COLORS
  $COLOR_COLUMN- Processes$RESET_COLORS...........: $COLOR_VALUE $PSA Running $RESET_COLORS
- $COLOR_COLUMN- System Uptime$RESET_COLORS.......: $COLOR_VALUE $upDays Days $upHours Hours $upMins Minutes $upSecs Seco
-nds $RESET_COLORS
+ $COLOR_COLUMN- System Uptime$RESET_COLORS.......: $COLOR_VALUE $upDays Days $upHours Hours $upMins Minutes $upSecs Seconds $RESET_COLORS
  $COLOR_COLUMN- Disk Space / $RESET_COLORS.......: $COLOR_VALUE $ROOT Remaining $RESET_COLORS
 ===========================================================================
 "
