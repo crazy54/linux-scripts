@@ -2,6 +2,8 @@
 
 USER=`whoami`
 HOSTNAME=`uname -n`
+
+# Note: If you cannot resolve the hostname, use -I instead here!  I use lowercase to identify name resolution issues on login.
 IP=`hostname -i`
 ROOT=`df -Ph | grep root | awk '{print $4}' | tr -d '\n'`
 HOME=`df -Ph | grep home | awk '{print $4}' | tr -d '\n'`
@@ -50,7 +52,7 @@ echo -e "
  $COLOR_COLUMN- CPU Usage$RESET_COLORS...........: $COLOR_VALUE $LOAD1 - $LOAD5 - $LOAD15 (1-5-15) $RESET_COLORS
  $COLOR_COLUMN- Memory used$RESET_COLORS.........: $COLOR_VALUE $MEMORY (Total-Free-Used) $RESET_COLORS
  $COLOR_COLUMN- Swap in Use$RESET_COLORS.........: $COLOR_VALUE $SWAP (Total-Used-Free) MB $RESET_COLORS
- $COLOR_COLUMN- Processes$RESET_COLORS...........: $COLOR_VALUE $PSA Running $RESET_COLORS
+ $COLOR_COLUMN- Processes$RESET_COLORS...........: $COLOR_VALUE $PSA Running Processes $RESET_COLORS
  $COLOR_COLUMN- System Uptime$RESET_COLORS.......: $COLOR_VALUE $upDays Days $upHours Hours $upMins Minutes $upSecs Seconds $RESET_COLORS
  $COLOR_COLUMN- Disk Space / $RESET_COLORS.......: $COLOR_VALUE $ROOT Remaining $RESET_COLORS
 ===========================================================================
