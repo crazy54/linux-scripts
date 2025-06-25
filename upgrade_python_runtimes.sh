@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Script to upgrade AWS Lambda and Systems Manager Automation Python runtimes
 
 # --- Configuration ---
@@ -9,6 +8,7 @@ TARGET_PYTHON_RUNTIME="python3.10"
 # are expected to be populated by discover_resources.sh
 LAMBDA_FUNCTIONS_INPUT_FILE="lambda_functions_to_update.txt"
 SSM_AUTOMATIONS_INPUT_FILE="ssm_automations_to_update.txt"
+
 LOG_FILE="upgrade_runtimes.log"
 
 # --- Logging ---
@@ -140,6 +140,6 @@ log "This script expects input files ($LAMBDA_FUNCTIONS_INPUT_FILE, $SSM_AUTOMAT
 # Removed dummy data generation for input files.
 
 update_lambda_functions
-update_ssm_automations
+update_ssm_autions
 
 log "--- Python Runtime Upgrade Script Finished ---"
