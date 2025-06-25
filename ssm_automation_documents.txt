@@ -1,0 +1,5 @@
+SampleAutomationDoc1
+AnotherSelfOwnedAutomation
+MyPythonRelatedAutomation
+YetAnotherDoc
+AutomationForDeprecationCheck

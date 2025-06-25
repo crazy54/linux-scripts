@@ -1,0 +1,75 @@
+
+2025-06-18 19:12:55 - --- Starting Python Runtime Upgrade Script ---
+2025-06-18 19:12:55 - Starting Lambda function identification...
+2025-06-18 19:12:55 - Identifying Lambda functions with runtimes: python3.9 python3.8 python3.7 python3.6 python2.7
+2025-06-18 19:12:55 - ERROR: Failed to list Lambda functions. The 'aws' command might not be available or configured.
+2025-06-18 19:12:55 - Re-creating dummy lambda_functions_to_update.txt for simulation purposes due to aws command failure.
+2025-06-18 19:12:55 - Starting Lambda function runtime updates...
+2025-06-18 19:12:55 - Updating runtime for Lambda function: simulated-lambda-1-py39 to python3.10
+2025-06-18 19:12:55 -   SIMULATING: aws lambda update-function-configuration --function-name "simulated-lambda-1-py39" --runtime "python3.10"
+2025-06-18 19:12:55 - Successfully SIMULATED update for Lambda function simulated-lambda-1-py39 to python3.10
+2025-06-18 19:12:55 - Updating runtime for Lambda function: simulated-lambda-2-py27 to python3.10
+2025-06-18 19:12:55 -   SIMULATING: aws lambda update-function-configuration --function-name "simulated-lambda-2-py27" --runtime "python3.10"
+2025-06-18 19:12:55 - Successfully SIMULATED update for Lambda function simulated-lambda-2-py27 to python3.10
+2025-06-18 19:12:55 - Lambda function runtime updates complete.
+2025-06-18 19:12:55 - Starting Systems Manager Automation identification...
+2025-06-18 19:12:55 - WARNING: SSM Automation identification is a placeholder. Populate ssm_automations_to_update.txt manually or with a more advanced script.
+2025-06-18 19:12:55 - SSM Automations to update (from ssm_automations_to_update.txt):
+2025-06-18 19:12:55 -   - MyTestAutomation1
+2025-06-18 19:12:55 -   - MyOldPythonAutomation
+2025-06-18 19:12:55 - Systems Manager Automation identification complete (placeholder).
+2025-06-18 19:12:55 - Starting Systems Manager Automation runtime updates...
+2025-06-18 19:12:55 - Simulating update for SSM Automation document: MyTestAutomation1 to python3.10
+2025-06-18 19:12:55 -   SIMULATING: aws ssm get-document --name MyTestAutomation1 --query 'Content' --output text > MyTestAutomation1_content.json
+2025-06-18 19:12:55 -   Simulated original content (first 10 lines of MyTestAutomation1_content_sim.json):
+2025-06-18 19:12:55 -     {
+2025-06-18 19:12:55 -       "description": "Simulated document content for MyTestAutomation1",
+2025-06-18 19:12:55 -       "schemaVersion": "0.3",
+2025-06-18 19:12:55 -       "assumeRole": "arn:aws:iam::123456789012:role/AutomationAssumeRole",
+2025-06-18 19:12:55 -       "mainSteps": [
+2025-06-18 19:12:55 -         {
+2025-06-18 19:12:55 -           "name": "executePython",
+2025-06-18 19:12:55 -           "action": "aws:executeScript",
+2025-06-18 19:12:55 -           "inputs": {
+2025-06-18 19:12:55 -             "Runtime": "python3.8", # Fixed old runtime for simulation
+2025-06-18 19:12:55 -   Simulated updated content (first 10 lines of MyTestAutomation1_content_sim.json):
+2025-06-18 19:12:55 -     {
+2025-06-18 19:12:55 -       "description": "Simulated document content for MyTestAutomation1",
+2025-06-18 19:12:55 -       "schemaVersion": "0.3",
+2025-06-18 19:12:55 -       "assumeRole": "arn:aws:iam::123456789012:role/AutomationAssumeRole",
+2025-06-18 19:12:55 -       "mainSteps": [
+2025-06-18 19:12:55 -         {
+2025-06-18 19:12:55 -           "name": "executePython",
+2025-06-18 19:12:55 -           "action": "aws:executeScript",
+2025-06-18 19:12:55 -           "inputs": {
+2025-06-18 19:12:55 -             "Runtime": "python3.10", # Fixed old runtime for simulation
+2025-06-18 19:12:55 -   SIMULATING: aws ssm update-document --name MyTestAutomation1 --content file://MyTestAutomation1_content_sim.json --document-version $LATEST
+2025-06-18 19:12:55 -   Successfully SIMULATED update for SSM Automation MyTestAutomation1 to python3.10
+2025-06-18 19:12:55 - Simulating update for SSM Automation document: MyOldPythonAutomation to python3.10
+2025-06-18 19:12:55 -   SIMULATING: aws ssm get-document --name MyOldPythonAutomation --query 'Content' --output text > MyOldPythonAutomation_content.json
+2025-06-18 19:12:55 -   Simulated original content (first 10 lines of MyOldPythonAutomation_content_sim.json):
+2025-06-18 19:12:55 -     {
+2025-06-18 19:12:55 -       "description": "Simulated document content for MyOldPythonAutomation",
+2025-06-18 19:12:55 -       "schemaVersion": "0.3",
+2025-06-18 19:12:55 -       "assumeRole": "arn:aws:iam::123456789012:role/AutomationAssumeRole",
+2025-06-18 19:12:55 -       "mainSteps": [
+2025-06-18 19:12:55 -         {
+2025-06-18 19:12:55 -           "name": "executePython",
+2025-06-18 19:12:55 -           "action": "aws:executeScript",
+2025-06-18 19:12:55 -           "inputs": {
+2025-06-18 19:12:55 -             "Runtime": "python3.8", # Fixed old runtime for simulation
+2025-06-18 19:12:55 -   Simulated updated content (first 10 lines of MyOldPythonAutomation_content_sim.json):
+2025-06-18 19:12:55 -     {
+2025-06-18 19:12:55 -       "description": "Simulated document content for MyOldPythonAutomation",
+2025-06-18 19:12:55 -       "schemaVersion": "0.3",
+2025-06-18 19:12:55 -       "assumeRole": "arn:aws:iam::123456789012:role/AutomationAssumeRole",
+2025-06-18 19:12:55 -       "mainSteps": [
+2025-06-18 19:12:55 -         {
+2025-06-18 19:12:55 -           "name": "executePython",
+2025-06-18 19:12:55 -           "action": "aws:executeScript",
+2025-06-18 19:12:55 -           "inputs": {
+2025-06-18 19:12:55 -             "Runtime": "python3.10", # Fixed old runtime for simulation
+2025-06-18 19:12:55 -   SIMULATING: aws ssm update-document --name MyOldPythonAutomation --content file://MyOldPythonAutomation_content_sim.json --document-version $LATEST
+2025-06-18 19:12:55 -   Successfully SIMULATED update for SSM Automation MyOldPythonAutomation to python3.10
+2025-06-18 19:12:55 - Systems Manager Automation runtime updates complete (simulation).
+2025-06-18 19:12:55 - --- Python Runtime Upgrade Script Finished ---
