@@ -1,0 +1,24 @@
+2025-06-25 16:26:14 - --- Starting Python Runtime Upgrade Script (ARN-aware) ---
+2025-06-25 16:26:14 - This script expects input files (lambda_functions_to_update.txt, ssm_automations_to_update.txt) to be populated by discover_resources.sh
+2025-06-25 16:26:14 - Starting Lambda function runtime updates from lambda_functions_to_update.txt...
+2025-06-25 16:26:14 - Updating runtime for Lambda function: my-old-lambda-1 in region: us-east-1 to python3.10
+SIMULATING: aws lambda update-function-configuration --function-name "my-old-lambda-1" --runtime "python3.10" --region "us-east-1"
+2025-06-25 16:26:14 - Successfully (simulated) updated Lambda function my-old-lambda-1 in us-east-1 to python3.10
+2025-06-25 16:26:14 - Updating runtime for Lambda function: legacy-lambda-west in region: eu-west-1 to python3.10
+SIMULATING: aws lambda update-function-configuration --function-name "legacy-lambda-west" --runtime "python3.10" --region "eu-west-1"
+2025-06-25 16:26:14 - Successfully (simulated) updated Lambda function legacy-lambda-west in eu-west-1 to python3.10
+2025-06-25 16:26:14 - Updating runtime for Lambda function: another-lambda-py38 in region: us-east-1 to python3.10
+SIMULATING: aws lambda update-function-configuration --function-name "another-lambda-py38" --runtime "python3.10" --region "us-east-1"
+2025-06-25 16:26:14 - Successfully (simulated) updated Lambda function another-lambda-py38 in us-east-1 to python3.10
+2025-06-25 16:26:14 - Lambda function runtime updates complete.
+2025-06-25 16:26:14 - Starting Systems Manager Automation runtime updates from ssm_automations_to_update.txt...
+2025-06-25 16:26:14 - Simulating update for SSM Automation document: MyAutomationDocEast1 in region us-east-1 to python3.10
+  SIMULATING: aws ssm get-document --name "MyAutomationDocEast1" --region "us-east-1" --query 'Content' --output text > MyAutomationDocEast1_us-east-1_content_sim.json
+  SIMULATING: aws ssm update-document --name "MyAutomationDocEast1" --content file://MyAutomationDocEast1_us-east-1_content_sim.json --document-version $LATEST --region "us-east-1"
+2025-06-25 16:26:14 -   Successfully SIMULATED update for SSM Automation MyAutomationDocEast1 in us-east-1 to python3.10
+2025-06-25 16:26:14 - Simulating update for SSM Automation document: SSMDocWest1 in region eu-west-1 to python3.10
+  SIMULATING: aws ssm get-document --name "SSMDocWest1" --region "eu-west-1" --query 'Content' --output text > SSMDocWest1_eu-west-1_content_sim.json
+  SIMULATING: aws ssm update-document --name "SSMDocWest1" --content file://SSMDocWest1_eu-west-1_content_sim.json --document-version $LATEST --region "eu-west-1"
+2025-06-25 16:26:14 -   Successfully SIMULATED update for SSM Automation SSMDocWest1 in eu-west-1 to python3.10
+2025-06-25 16:26:14 - Systems Manager Automation runtime updates complete (simulation).
+2025-06-25 16:26:14 - --- Python Runtime Upgrade Script Finished ---

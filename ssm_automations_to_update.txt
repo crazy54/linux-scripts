@@ -1,0 +1,2 @@
+arn:aws:ssm:us-east-1:123456789012:document/MyAutomationDocEast1
+arn:aws:ssm:eu-west-1:123456789012:document/SSMDocWest1
