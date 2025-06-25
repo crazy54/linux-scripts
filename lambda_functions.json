@@ -1,0 +1,32 @@
+{
+  "Functions": [
+    {
+      "FunctionName": "my-function-1",
+      "Runtime": "python3.9"
+    },
+    {
+      "FunctionName": "my-function-2",
+      "Runtime": "nodejs14.x"
+    },
+    {
+      "FunctionName": "my-function-3",
+      "Runtime": "python3.7"
+    },
+    {
+      "FunctionName": "my-function-4",
+      "Runtime": "go1.x"
+    },
+    {
+      "FunctionName": "my-function-5",
+      "Runtime": "python2.7"
+    },
+    {
+      "FunctionName": "my-function-6",
+      "Runtime": "python3.10"
+    },
+    {
+      "FunctionName": "another-py39-func",
+      "Runtime": "python3.9"
+    }
+  ]
+}
